@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Primer Programa con JavaScript5 y HTML5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <script type="text/javascript">
+            function inicializar() {
+                var i = document.getElementById('img1');
+                // i.ondblclick = function(){i.src='../img/Encabezado1.gif';};
+                // i.onclick   = function(){i.src='../img/Emiro.gif';};
+                i.addEventListener('dblclick', function () {
+                    i.src = '../img/Encabezado1.gif';
+                });
+                i.addEventListener('click', function () {
+                    i.src = '../img/Emiro.gif';
+                });
+            }
+            function mostrar_fecha( ) {
+                var cl = document.getElementById("fecha");
+                cl.innerHTML = new Date();
+            }
+        </script>     
+    </head>
+    <body onload="inicializar()">
+        <h1>Sentencia For/In </h1>
+        <table id="tabla">
+            <tr><th>Propiedad</th><th>Valor</th></tr>
+        </table>
+        <h2>Reloj</h2>       
+        <div id="fecha"></div>
+        <script type="text/javascript">
+            var i, tabla = document.getElementById("tabla");
+            for (i in window.screen) {
+                tabla.innerHTML += "<tr><td>" + i + "</td><td> = " + window.screen[i] + "</td></tr>";
+            }
+            mostrar_fecha( );
+            setInterval(mostrar_fecha, 100);
+        </script>
+        <img src="../img/Encabezado1.gif", id="img1"/>
+        <p <span class="glyphicon glyphicon-calendar"></span>>
+
+        <!--
+        <img src="../img/Encabezado1.gif"
+             onclick    = "this.src = '../img/Encabezado1.gif'"
+             ondblclick = "this.src = '../img/Emiro.gif'"             
+             />
+        -->
+    </body>
+</html>
